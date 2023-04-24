@@ -10,7 +10,8 @@ socketClient.on('history', data => {
     let history = document.getElementById('history')
     let messages = ''
     data.forEach(message => {
-        messages += `${message}<br />`
+        messages += `[${message.userId}]: ${message.message}<br />`
     })
     history.innerHTML = messages
+    chatBox.value = ""
 })
